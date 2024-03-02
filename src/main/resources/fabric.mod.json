@@ -1,0 +1,48 @@
+{
+	"schemaVersion": 1,
+	"id": "personal-identity",
+	"version": "${version}",
+	"name": "Personal Identity",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/personal-identity/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "com.zaytri.PersonalIdentity",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "com.zaytri.PersonalIdentityClient",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"personal-identity.mixins.json",
+		{
+			"config": "personal-identity.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.7",
+		"minecraft": "~1.20.4",
+		"java": ">=17",
+		"fabric-api": "*",
+		"fabric-language-kotlin": ">=1.9.22"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
